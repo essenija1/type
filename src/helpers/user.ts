@@ -15,6 +15,17 @@ const username = new Person('', './img/avatar.png');
 const favourites = 'в333';
 localStorage.setItem('username', JSON.stringify(username));
 localStorage.setItem('favoritesAmount', favourites.toString());
+console.log(localStorage.getItem('username'));
+
+export function initToolsMenuItems() {
+  toggleFavoriteItem = new ToolsMenuItem();
+  toggleFavoriteItem.avatarLink = './img/avatar.png';
+  toggleFavoriteItem.onSelected = () => this.toggleFavorite();
+  
+  };
+
+
+
 
 export function getFavoritesAmount(key: string): unknown {
   const value: unknown = localStorage.getItem(key);
