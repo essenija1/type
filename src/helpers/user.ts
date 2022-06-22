@@ -11,9 +11,9 @@ export class Person {
       }
     }
 
-const username = new Person('Avatar', './img/avatar.png');
-const favourites = 'd333';
-localStorage.setItem('username', JSON.stringify('username'));
+const username = new Person('', './img/avatar.png');
+const favourites = 'в333';
+localStorage.setItem('username', JSON.stringify(username));
 localStorage.setItem('favoritesAmount', favourites.toString());
 
 export function getFavoritesAmount(key: string): unknown {
@@ -28,7 +28,7 @@ export function getFavoritesAmount(key: string): unknown {
 
 
 export function searchFormData(key: string): Person {
-  const value: unknown = JSON.parse(localStorage.getItem(key));
+  const value: unknown = JSON.parse(localStorage.getItem(value));
   if (typeof value === 'object') {
     if ('username' in value && 'avatarUrl' in value) {
       return value as Person;
