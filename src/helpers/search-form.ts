@@ -153,7 +153,7 @@ import { renderSearchResultsBlock } from './search-results.js';
     fetchPlaces()
    })
 
-   function fetchPlace() {
+   function fetchPlaces() {
     const coordinates = '59.9386,30.3141'
     const checkInDate = new Date(checkIn).getTime() || new Date(dafaultDateIn).getTime()
     const checkOutDate = new Date(checkOut).getTime() || new Date(dafaultDateOff).getTime()
@@ -167,4 +167,4 @@ import { renderSearchResultsBlock } from './search-results.js';
       renderSearchResultsBlock(data)
     })
    }
-}
+

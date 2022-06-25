@@ -11,10 +11,34 @@ export class Person {
       }
     }
 
-const username = new Person('Avatar', './img/avatar.png');
-const favourites = 'd333';
-localStorage.setItem('username', JSON.stringify('username'));
+const username = new Person('', './img/avatar.png');
+const favourites = 'в333';
+localStorage.setItem('username', JSON.stringify(username));
 localStorage.setItem('favoritesAmount', favourites.toString());
+console.log(localStorage.getItem('username'));
+
+export function initToolsMenuItems() {
+  toggleFavoriteItem = new ToolsMenuItem();
+  toggleFavoriteItem.avatarLink = './img/avatar.png';
+  toggleFavoriteItem.onSelected = () => this.toggleFavorite();
+  
+  };
+
+
+  const client = platformClient.ApiClient.instance;
+    client.loginClientCredentialsGrant(username, 'avatarUrl')
+      .then(()=> {
+  
+})
+      .catch((err) => {
+ 
+       console.log(err);
+});
+
+
+
+
+
 
 export function getFavoritesAmount(key: string): unknown {
   const value: unknown = localStorage.getItem(key);
@@ -28,7 +52,7 @@ export function getFavoritesAmount(key: string): unknown {
 
 
 export function searchFormData(key: string): Person {
-  const value: unknown = JSON.parse(localStorage.getItem(key));
+  const value: unknown = JSON.parse(localStorage.getItem(value));
   if (typeof value === 'object') {
     if ('username' in value && 'avatarUrl' in value) {
       return value as Person;

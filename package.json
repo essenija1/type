@@ -11,7 +11,8 @@
     "@feathersjs/express": "^4.5.11",
     "@feathersjs/feathers": "^4.5.11",
     "@feathersjs/transport-commons": "^4.5.11",
-    "joi": "^17.4.0"
+    "joi": "^17.4.0",
+    "purecloud-platform-client-v2": "^140.0.0"
   },
   "devDependencies": {
     "@types/node": "^15.12.2",
